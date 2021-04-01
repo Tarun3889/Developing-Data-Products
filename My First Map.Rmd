@@ -11,7 +11,7 @@ my_map <- leaflet()%>%
         addTiles()
 my_map
 ```
-
+The source code is available at [GitHub](https://github.com/Tarun3889/Developing-Data-Products)
 ## My First MAP
 ```{r, echo=FALSE}
 library(leaflet)
