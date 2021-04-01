@@ -1,0 +1,40 @@
+---
+title: "My_First_Map"
+author: "Tarun"
+date: "4/1/2021"
+output: html_document
+---
+
+```{r, echo=FALSE}
+library(leaflet)
+my_map <- leaflet()%>%
+        addTiles()
+my_map
+```
+
+## My First MAP
+```{r, echo=FALSE}
+library(leaflet)
+
+my_map <- my_map %>%
+        addMarkers(lat=28.96322,  lng=77.7406, popup="Tejgarhi, Meerut") %>%
+        addMarkers(lat=29.04223,  lng=77.70701, popup="Sun City, Meerut") %>%
+        addMarkers(lat=28.94862,  lng=77.67516, popup="Shopprix Mall, Meerut") %>%
+        addMarkers(lat=29.02455,  lng=77.68748, popup="Kanker Khera, Meerut") %>%
+        addMarkers(lat=29.00036,  lng=77.76166, popup="Ganga Nagar, Meerut") %>%
+        addMarkers(lat=28.95661,  lng=77.74977, popup="Mansa devi Temple, Meerut") %>%
+        addMarkers(lat=28.97059,  lng=77.74047, popup="C.C.S University, Meerut")
+
+my_map
+       
+```
+## Adding Mapping Clusters
+```{r, echo=F}
+library(leaflet)
+df <- data.frame(lat=runif(500, min=28.94, max = 29.04 ),
+                 lng=runif(500, min=77.68, max = 77.749 )) 
+df %>%
+        leaflet() %>%
+        addTiles() %>%  
+        addMarkers(clusterOptions = markerClusterOptions())
+```
